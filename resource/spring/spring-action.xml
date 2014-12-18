@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd
+">
+	<!-- 文件下载action -->
+	<bean name="fileDownAction" class="cn.com.doc.action.FileDownAction">
+		<!--<property name="docBugService"  ref="bugMessageService"></property> -->
+	</bean>
+	
+	<!-- 文件上传action -->
+	<bean name="uploadAction" class="cn.com.doc.action.UploadAction">
+		<property name="docBugService"  ref="docBugService"></property>
+	</bean>
+	
+	<bean name="patchsDownAction" class="cn.com.doc.action.PatchsDownAction">
+		<property name="docBugService"  ref="docBugService"></property>
+	</bean>
+</beans>
