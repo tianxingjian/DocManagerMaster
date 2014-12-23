@@ -20,7 +20,7 @@
 	<!-- 每次HTTP请求系统都重新加载资源文件,有助于开发 -->
 	<constant name="struts.i18n.reload" value="true" />
 
-	<package name="default" namespace="" extends="struts-default">
+	<package name="default" namespace="/" extends="struts-default">
 		<action name="fileDownAction" class="fileDownAction">
 			<result name="success" type="stream">
 				<param name="contentType">text/plain</param>
@@ -42,17 +42,19 @@
 		<!-- Action名字，类以及导航页面定义 -->
 		<!-- 通过Action类处理才导航的的Action定义 -->
 		<action name="upload" class="uploadAction">
-			<!-- <result name="success" type="json"> <param name="root">resultJson</param> 
-				</result> -->
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
 		</action>
 	</package>
-	
+
 	<package name="upload" namespace="" extends="json-default">
-	
+
 	</package>
-	
+
 	<constant name="struts.custom.i18n.resources" value="global" />
-	<constant name="struts.multipart.saveDir" value="d:/tmp"></constant>
+	<constant name="struts.multipart.saveDir" value="/home/tianxingjian/log/tmp"></constant>
 	<constant name="struts.multipart.maxSize" value="4294967296"></constant>
 	<constant name="struts.multipart.parser" value="jakarta"></constant>
 </struts>
